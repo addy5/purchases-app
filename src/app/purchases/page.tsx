@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { PurchasesTable } from "./components/purchases-table"
+import { PurchasesList } from "./components/purchases-list"
 import type { Purchase } from "@/types/purchase"
 import { fetchPurchases } from "@/services/purchaseService"
 import "./purchases-page.scss"
@@ -37,7 +37,7 @@ export default function PurchasesPage() {
   return (
     <div className="purchases-page">
       <h1>Purchases</h1>
-      <PurchasesTable purchases={purchases} />
+      <PurchasesList purchases={purchases} />
     </div>
   )
 }
