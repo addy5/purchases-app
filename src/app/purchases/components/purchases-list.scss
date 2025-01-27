@@ -1,3 +1,9 @@
+$white: #ffffff;
+$light-grey: #e2e8f0;
+$dark-grey: #4a5568;
+$bold-black: #1a202c;
+$light-glacier: #f7fafc;
+
 .purchases-list {
   display: flex;
   flex-direction: column;
@@ -14,19 +20,17 @@
     padding: 0;
     gap: 0;
     background: white;
-    border-radius: 0.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid $light-grey;
     overflow: hidden;
-    padding: 0 1rem;
 
     .list-header {
       display: grid;
       grid-template-columns: 2fr 1fr 1.5fr 1fr 3fr 1fr auto;
       gap: 1rem;
       padding: 1rem;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid $light-grey;
       font-weight: 600;
-      color: #4a5568;
+      color: $dark-grey;
 
       >div {
         &:not(.header-description) {
@@ -78,19 +82,19 @@
   .name {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1a202c;
+    color: $dark-grey;
     margin: 0;
   }
 
   .price {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1a202c;
+    color: $dark-grey;
   }
 
   .mobile-content {
     .description {
-      color: #4a5568;
+      color: $dark-grey;
       line-height: 1.5;
       margin: 1rem 0 1.5rem;
     }
@@ -98,12 +102,12 @@
     .purchase-date {
       .label {
         font-weight: 600;
-        color: #1a202c;
+        color: $dark-grey;
         margin-bottom: 0.25rem;
       }
 
       .value {
-        color: #4a5568;
+        color: $dark-grey;
       }
     }
   }
@@ -150,7 +154,7 @@
       .date {
         display: block;
         font-size: 0.9375rem;
-        color: #4a5568;
+        color: $dark-grey;
 
         .label {
           display: none;
@@ -200,7 +204,7 @@
 
           &.gray {
             background-color: #f7fafc;
-            color: #4a5568;
+            color: $dark-grey;
             border: 1px solid #edf2f7;
           }
         }
@@ -213,7 +217,7 @@
         overflow: hidden;
         font-size: 0.9375rem;
         line-height: 1.4;
-        color: #4a5568;
+        color: $dark-grey;
       }
 
       .price {
@@ -234,7 +238,7 @@
           line-height: 0;
 
           &:hover {
-            background-color: #f7fafc;
+            background-color: $light-glacier;
           }
 
           .more-icon {
@@ -257,12 +261,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: white;
+  background-color: $white;
   border-radius: 1rem;
-  color: #4a5568;
+  color: $dark-grey;
   font-size: 1.1rem;
-
-  @media (min-width: 1200px) {
-    border-radius: 0.5rem;
-  }
 }

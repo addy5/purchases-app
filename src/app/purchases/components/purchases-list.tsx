@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { MoreVertical } from "lucide-react"
-import { formatDate, formatPrice, getCategoryColor, decodeHtmlEntities } from "@/lib/utils"
+import { formatDate, formatPrice, getCategoryColor, decodeHtmlEntities } from "@/helpers/utils"
 import type { Purchase } from "@/types/purchase"
 import "./purchases-list.scss"
 
