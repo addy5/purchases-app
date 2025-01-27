@@ -11,6 +11,10 @@ interface PurchasesTableProps {
 }
 
 export function PurchasesTable({ purchases = [] }: PurchasesTableProps) {
+  if (purchases.length === 0) {
+    return <div className="purchases-table-empty">No purchases found.</div>
+  }
+
   return (
     <div className="purchases-table">
       <table>

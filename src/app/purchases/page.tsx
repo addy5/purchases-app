@@ -1,34 +1,43 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import { PurchasesTable } from "./components/purchases-table"
 import type { Purchase } from "@/types/purchase"
-
-// Stub data matching the API response
-const purchases: Purchase[] = [
-  {
-    id: 1,
-    location: "https://picsum.photos/id/0/200",
-    purchaseDate: "2020-12-27T00:00:00.000Z",
-    category: "Food",
-    description: "connecting the card won't do anything, we need to back up the digital HDD driver!",
-    price: 99882,
-    name: "auxiliary generating microchip",
-  },
-  {
-    id: 2,
-    location: "https://picsum.photos/id/1/200",
-    purchaseDate: "2020-12-28T00:00:00.000Z",
-    category: "Technology",
-    description: "I'll synthesize the primary SMTP firewall, that should monitor the ADP feed!",
-    price: 69706,
-    name: "1080p backing up port",
-  },
-]
+import { fetchPurchases } from "@/services/purchaseService"
+import "./purchases-page.scss"
 
 export default function PurchasesPage() {
+  const [purchases, setPurchases] = useState<Purchase[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function loadPurchases() {
+      try {
+        const data = await fetchPurchases()
+        setPurchases(data)
+        setIsLoading(false)
+      } catch (err) {
+        setError("Failed to load purchases. Please try again later.")
+        setIsLoading(false)
+      }
+    }
+
+    loadPurchases()
+  }, [])
+
+  if (isLoading) {
+    return <div className="purchases-page">Loading purchases...</div>
+  }
+
+  if (error) {
+    return <div className="purchases-page">Error: {error}</div>
+  }
+
   return (
-    <div className="container py-10">
-      <h1 className="text-4xl font-bold mb-8">Purchases</h1>
+    <div className="purchases-page">
+      <h1>Purchases</h1>
       <PurchasesTable purchases={purchases} />
     </div>
   )
 }
-
