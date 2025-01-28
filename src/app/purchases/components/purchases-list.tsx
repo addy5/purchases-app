@@ -5,6 +5,7 @@ import { MoreVertical } from "lucide-react"
 import { formatDate, formatPrice, decodeHtmlEntities } from "@/helpers/formatHelper"
 import { getCategoryColor } from "@/helpers/purchasesHelper"
 import type { Purchase } from "@/types/purchase"
+import { Button } from "@/components/button/button"
 import "./purchases-list.scss"
 
 interface PurchasesListProps {
@@ -15,6 +16,11 @@ export function PurchasesList({ purchases = [] }: PurchasesListProps) {
   if (purchases.length === 0) {
     return <div className="purchases-list-empty">No purchases found.</div>
   }
+
+  const handleClick = () => {
+    // TODO
+    console.log("Clicked overflow");
+  };
 
   return (
     <div className="purchases-list">
@@ -65,9 +71,9 @@ export function PurchasesList({ purchases = [] }: PurchasesListProps) {
             <div className="description">{decodeHtmlEntities(purchase.description)}</div>
             <div className="price">{formatPrice(purchase.price)}</div>
             <div className="actions">
-              <button className="more-button">
+              <Button type="button" className="more-button" onClick={(handleClick)}>
                 <MoreVertical className="more-icon" />
-              </button>
+              </Button>
             </div>
           </div>
           <div className="mobile-content">
