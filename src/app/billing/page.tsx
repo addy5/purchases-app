@@ -8,15 +8,15 @@ export default function PurchasesPage() {
   const [error, setError] = useState<string | null>(null)
 
   if (isLoading) {
-    return <div className="purchases-page">Loading your payment information...</div>
+    return <div className="billing-page">Loading your payment information...</div>
   }
 
   if (error) {
-    return <div className="purchases-page">Error: {error}</div>
+    return <div className="billing-page">Error: {error}</div>
   }
 
   return (
-    <div className="purchases-page">
+    <div className="billing-page">
       <h1>Billing</h1>
     </div>
   )
