@@ -10,19 +10,21 @@ Basic "Purchases" page with Next JS with specific styling. The theme of this pro
 
 ## Getting Started
 
-First, ensure you have [node and npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on you local environment.
+Note: if you do not have a local development environment readily available to you, this project is also being hosted on Vercel [here for viewing](https://idmeproject-2af6dpfm3-addy5s-projects.vercel.app/purchases).
 
-Run the development server:
+To deploy locally, ensure you have [node and npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on you local environment.
+
+- Clone this repo to your local directory and cd into the directory from your terminal
+- Install poject dependancies with npm
+- Run the development server
 
 ```bash
+cd ${PATH_TO_DIRECTORY}
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000/purchases](http://localhost:3000/purchases) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
 
 
 ## Learn More
