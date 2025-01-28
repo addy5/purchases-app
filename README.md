@@ -48,6 +48,7 @@ The theme of this project is a basic demo of a "Purchases" page that performs th
 In production applications at scale, I would weigh the requirements, resources, and expertise of the team more heavily when choosing a technology stack. For example, I really enjoy using Next JS for personal projects; however, considerations like scalability, performance, costs, and ease of integrations have been deprioritized in favor of getting MVP up and running.
 
 - Improvements if I had more time:
+    - Testing - I would have liked to include a minumum of unit tests for the components and any methods containg business logic. And if I had more time, revisit adding UI / functional tests (selenium , Cypress, etc).
     - I would have cleaned up my styling structure a bit more:
         - Create top level files for shared variables like: colors, breakpoints, commonly used mixins
         - Reduce the amount of nested selectors in .scss files. Although semantically correct, I lean towards more human readable/digestible sass rules (max 2 nested levels) are far more beneficial
