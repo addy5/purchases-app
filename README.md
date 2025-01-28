@@ -1,11 +1,13 @@
 # purchases-app
 Basic "Purchases" page with Next JS with specific styling. The theme of this project is a basic demo of a "Purchases" page that performs the following:
-- loads an HTML page at route /purchases
-- page should load data sourced from the following [API endpoint](https://storage.googleapis.com/marketplace-prod-7728-shop-cdn-e5e2/interview/data.json)
-- data should be rendered in the following responsive layout:
+- Loads an HTML page at route /purchases
+- Page should fetch data sourced from the following [API endpoint](https://storage.googleapis.com/marketplace-prod-7728-shop-cdn-e5e2/interview/data.json)
+- Data should be rendered in the following responsive layouts:
     - mobile
+    ![Mobile Design](./design-mobile.png)
     - desktop
-- the page should generally be functional and performant, and free of any UX issues
+    ![Desktop Design](./design-desktop.png)
+- Page should generally be functional and performant, and free of any UX issues
 
 
 ## Getting Started
@@ -25,6 +27,9 @@ npm run dev
 ```
 
 Open [http://localhost:3000/purchases](http://localhost:3000/purchases) with your browser to see the result.
+
+![Mobile View](./actual-mobile.png)
+![Desktop View](./actual-desktop.png)
 
 
 ## Learn More
