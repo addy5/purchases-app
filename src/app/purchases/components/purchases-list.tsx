@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { MoreVertical } from "lucide-react"
-import { formatDate, formatPrice, getCategoryColor, decodeHtmlEntities } from "@/helpers/utils"
+import { formatDate, formatPrice, decodeHtmlEntities } from "@/helpers/formatHelper"
+import { getCategoryColor } from "@/helpers/purchasesHelper"
 import type { Purchase } from "@/types/purchase"
 import "./purchases-list.scss"
 
@@ -26,7 +27,7 @@ export function PurchasesList({ purchases = [] }: PurchasesListProps) {
         <div className="header-price">Price</div>
         <div className="header-actions"></div>
       </div>
-      {purchases.map((purchase) => (
+      {purchases.map((purchase, index) => (
         <div key={purchase.id} className="purchase-card">
           <div className="card-header">
             <div className="merchant">
@@ -36,6 +37,8 @@ export function PurchasesList({ purchases = [] }: PurchasesListProps) {
                   alt={`${purchase.name} logo`}
                   fill
                   className="logo"
+                  loading={index <= 1 ? "eager" : "lazy"}
+                  sizes="(max-width: 1199px) 40px, 32px"
                 />
               </div>
               <h3 className="name">{purchase.name}</h3>
@@ -47,6 +50,8 @@ export function PurchasesList({ purchases = [] }: PurchasesListProps) {
                   alt={`${purchase.name} logo`}
                   fill
                   className="logo"
+                  loading={index <= 1 ? "eager" : "lazy"}
+                  sizes="32px"
                 />
               </div>
             </div>

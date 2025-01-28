@@ -7,4 +7,3 @@ export interface Purchase {
   price: number
   name: string
 }
-

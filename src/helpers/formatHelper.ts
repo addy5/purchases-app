@@ -14,17 +14,6 @@ export function formatDate(date: string) {
   }).format(new Date(date))
 }
 
-export function getCategoryColor(category: string) {
-  const colors: Record<string, string> = {
-    Technology: "blue",
-    Food: "green",
-    Shopping: "purple",
-    Entertainment: "yellow",
-    Automotive: "red",
-  }
-  return colors[category] || "gray"
-}
-
 export function decodeHtmlEntities(text: string): string {
   const textArea = document.createElement("textarea")
   textArea.innerHTML = text
